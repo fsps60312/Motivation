@@ -28,7 +28,7 @@ namespace Motivation
         public static unsafe bool IsMatch(Bitmap source, Bitmap target, Point p)
         {
             int h = target.Height, w = target.Width;
-            Debug.Assert(p.X + w <= source.Width && p.Y + h <= source.Height);
+            Trace.Assert(p.X + w <= source.Width && p.Y + h <= source.Height);
             BitmapData sd = source.LockBits(new Rectangle(p.X, p.Y, w, h), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
             BitmapData td = target.LockBits(new Rectangle(0, 0, w, h), ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
             //if (++msgCounter > 1920 * 1070) { form.Size = new Size(500, 0); form.Show(); form.Text = String.Format("({0},{1})({2},{3})#{4}", sd.Width, sd.Height, td.Width, td.Height, msgCounter); }
@@ -47,7 +47,7 @@ namespace Motivation
         public static unsafe bool IsMatch(BitmapData sd, BitmapData td, Point p)
         {
             int h = td.Height, w = td.Width;
-            Debug.Assert(p.X + w <= sd.Width && p.Y + h <= sd.Height);
+            Trace.Assert(p.X + w <= sd.Width && p.Y + h <= sd.Height);
             //if (++msgCounter > 1920 * 1070) { form.Size = new Size(500, 0); form.Show(); form.Text = String.Format("({0},{1})({2},{3})#{4}", sd.Width, sd.Height, td.Width, td.Height, msgCounter); }
             int tolerance = h * w * 4 * 5;
             for(int y=0;y<h;y++)

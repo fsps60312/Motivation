@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Motivation</RootNamespace>
     <AssemblyName>Motivation</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,14 +65,17 @@
     <Compile Include="MyPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MyProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyScreen.cs" />
-    <Compile Include="MyStackLayoutPanel.cs">
+    <Compile Include="TableLayoutPanel\MyStackLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MyTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MyTableLayoutPanel.cs">
+    <Compile Include="TableLayoutPanel\MyTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MyTabPage.cs">
@@ -81,6 +85,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableLayoutPanel\MyTableLayoutPanelMethods.cs" />
+    <Compile Include="TableLayoutPanel\MyHorizontalLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TableLayoutPanel\MyVerticalLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

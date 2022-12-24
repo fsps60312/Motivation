@@ -27,18 +27,18 @@ namespace Motivation
         /// <param name="text">field text</param>
         public TextBox AddField(string name,string text="")
         {
-            Debug.Assert(!textBoxes.ContainsKey(name));
+            Trace.Assert(!textBoxes.ContainsKey(name));
             this.RowCount++;
             this.RowStyles.Add(new RowStyle(SizeType.AutoSize, 1));
             {
                 MyLabel label = new MyLabel(name + ":");
-                this.AddControl(label, this.RowCount - 1, 0);
+                this.Controls.Add(label, 0, this.RowCount - 1);
             }
             {
                 MyTextBox txb = new MyTextBox(false,text);
                 textBoxes[name] = txb;
                 txb.Multiline = false;
-                this.AddControl(txb, this.RowCount - 1, 1);
+                this.Controls.Add(txb, 1, this.RowCount - 1);
                 return txb;
             }
         }
@@ -56,7 +56,7 @@ namespace Motivation
         /// <param name="name">field name</param>
         public TextBox GetTextBox(string name)
         {
-            Debug.Assert(textBoxes.ContainsKey(name));
+            Trace.Assert(textBoxes.ContainsKey(name));
             return textBoxes[name];
         }
     }
